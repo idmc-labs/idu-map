@@ -1,7 +1,7 @@
 export const MAPBOX_ACCESS_TOKEN =
-    "pk.eyJ1IjoiaWRtY2RhIiwiYSI6ImNqY2JyNDZzazBqa2gycG8yNTh2eHM4dGYifQ.EOazpb8QxCCEKhhtrVjnYA";
+    "pk.eyJ1IjoidG9nZ2xlY29ycCIsImEiOiJjazk5ZXMza2YxZmQ1M2dvNWxneTEycnQwIn0.K3u-ns63rFzM7CzrnOBm2w";
 export const MAPBOX_STYLE_ID =
-    "mapbox://styles/idmcda/cjasa8fvu6hp92spaeobt52k6";
+    "mapbox://styles/togglecorp/cl50rwy0a002d14mo6w9zprio";
 export const IDMC_MAP_DATA_URL =
     "https://backend.idmcdb.org/data/idus_view_flat_cached";
 export const IDMC_COLOR_CONFLICT = "#ee7d00";
