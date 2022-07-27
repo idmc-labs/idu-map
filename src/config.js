@@ -3,7 +3,8 @@ export const MAPBOX_ACCESS_TOKEN =
 export const MAPBOX_STYLE_ID =
     "mapbox://styles/togglecorp/cl50rwy0a002d14mo6w9zprio";
 export const IDMC_MAP_DATA_URL =
-    "https://backend.idmcdb.org/data/idus_view_flat_cached";
+    "https://helix-tools-api.idmcdb.org/external-api/idus";
+
 export const IDMC_COLOR_CONFLICT = "#ee7d00";
 export const IDMC_COLOR_DISASTER = "#008dcc";
 export const IDMC_COLOR_DEVELOPMENT = "#33953e";
