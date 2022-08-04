@@ -64,7 +64,7 @@ const configureMapOffsetRenderer = (map, offsetFactor) => {
     type: "geojson",
     data: mapDataToGeoJson([]),
   });
-  
+
   map.addLayer({
     id: layerName(offsetFactor),
     type: "circle",
@@ -225,12 +225,15 @@ class Map extends React.Component {
 
   onMapReady() {
     return new Promise(resolve => {
-      this.map.on("load", () => resolve());
+      this.map.on("load", () => {
+        return resolve();
+      });
     })
   }
 
   fetchIdmcData() {
-    return fetch(IDMC_MAP_DATA_URL).then(response => response.json());
+    return fetch(IDMC_MAP_DATA_URL, { credentials: 'omit' })
+      .then(response => response.json());
   }
 
   addMapControls() {
@@ -281,10 +284,13 @@ class Map extends React.Component {
     }
 
     this.initializeMapbox();
+
     this.onMapReady()
-        .then(() => this.fetchIdmcData())
+        .then(() => {
+          return this.fetchIdmcData();
+        })
         .then(events => {
-          this.rawEvents = events
+          this.rawEvents = events;
           this.updateMap()
 
           this.setState({ loading: false });
@@ -297,7 +303,7 @@ class Map extends React.Component {
     }
     return (
         <div>
-          <div id="map"/>
+          <div id="map" />
           {this.state.loading && <Loading/>}
           <Legend
               displacementTypeFilters={this.state.displacementTypeFilters}
